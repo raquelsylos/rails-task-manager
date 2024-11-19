@@ -1,0 +1,12 @@
+<h1 class="p-2">Tasks</h1>
+
+<ul class="list-group p-2">
+  <% @tasks.each do |task| %>
+    <li class="list-group-item d-flex align-items-center">
+      <input type="checkbox" class="form-check-input me-2" />
+      <%= link_to task.title, task_path(task), class: "text-decoration-none" %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add a new task', new_task_path, class: "btn btn-primary mt-3" %>
